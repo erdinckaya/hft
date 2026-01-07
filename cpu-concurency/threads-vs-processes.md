@@ -101,6 +101,3 @@ Thread creation:
 | **1 core'da 2 process AYNI ANDA**      | ❌ Hayır                  | -                     | -                   |
 | **Thread farklı core'lara geçebilir**  | ✅ Evet                   | Migration             | Load balancing      |
 | **Process farklı core'lara geçebilir** | ✅ Evet                   | Migration             | OS scheduler        |
-
-
-![[thread.cpp]]

@@ -1,0 +1,31 @@
+# IDE folders
+.idea/
+.vscode/
+.code/
+
+# Build folders (all variations)
+cmake-build-*/
+build*/
+build-*/
+_build*/
+_builds/
+
+# CMake generated files
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+CMakeUserPresets.json
+
+# Compiled binaries
+*.exe
+*.out
+*.app
+
+# Libraries
+*.so
+*.so.*
+*.dylib
+*.dll
+*.a
+*.lib
