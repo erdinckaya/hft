@@ -5,6 +5,7 @@
 
 # Build folders (all variations)
 cmake-build-*/
+examples/cmake-build-*/
 build*/
 build-*/
 _build*/
