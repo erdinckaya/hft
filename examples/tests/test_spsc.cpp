@@ -256,6 +256,7 @@ TEST(SPSCRingBufferTest, TypeSafety) {
     double dval = 0.0;
     EXPECT_TRUE(double_buffer.pop(dval));
     EXPECT_DOUBLE_EQ(dval, 3.14159);
+    
 
     SPSCRingBuffer<std::string, 8> string_buffer;
     EXPECT_TRUE(string_buffer.push("Hello"));
