@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "cpu-concurency/cahces.md",
+                "file": "cpu-concurency/memory models for atomic.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "cahces"
+              "title": "memory models for atomic"
             }
           }
         ]
@@ -185,6 +185,10 @@
   },
   "active": "e6bf24c1ca72803e",
   "lastOpenFiles": [
+    "cpu-concurency/atomics.md",
+    "cpu-concurency/mutex.md",
+    "cpu-concurency/threads-vs-processes.md",
+    "cpu-concurency/cahces.md",
     "examples/cmake-build-debug/tests/CMakeFiles/SPSCRingBufferTests.dir/test_spsc.cpp.o.d",
     "examples/cmake-build-debug/tests/CMakeFiles/SPSCRingBufferTests.dir/test_spsc.cpp-50601533.o.tmp",
     "examples/cmake-build-debug/tests/CMakeFiles/SPSCRingBufferTests.dir/test_spsc.cpp-9e3f3221.o.tmp",
@@ -195,7 +199,6 @@
     "examples/cmake-build-debug/tests/SPSCRingBufferTests",
     "examples/cmake-build-debug/lib/libgtest_main.a",
     "examples/cmake-build-debug/lib/libgtest.a",
-    "examples/cmake-build-debug/_deps/googletest-build/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o",
     "examples/cmake-build-debug/_deps/googletest-src/googletest/include/gtest/internal/custom/README.md",
     "examples/cmake-build-debug/_deps/googletest-src/googletest/docs/README.md",
     "examples/cmake-build-debug/_deps/googletest-src/googletest/README.md",
@@ -217,9 +220,6 @@
     "examples/cmake-build-debug/_deps/googletest-src/docs/gmock_for_dummies.md",
     "examples/cmake-build-debug/_deps/googletest-src/docs/gmock_faq.md",
     "examples/cmake-build-debug/_deps/googletest-src/docs/gmock_cook_book.md",
-    "examples/cmake-build-debug/_deps/googletest-src/docs/gmock_cheat_sheet.md",
-    "examples/cmake-build-debug/_deps/googletest-src/docs/community_created_documentation.md",
-    "examples/cmake-build-debug/_deps/googletest-src/docs/faq.md",
-    "examples/cmake-build-debug/_deps/googletest-src/docs/advanced.md"
+    "examples/cmake-build-debug/_deps/googletest-src/docs/gmock_cheat_sheet.md"
   ]
 }
