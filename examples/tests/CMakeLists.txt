@@ -1,12 +1,14 @@
 # Create test executable
-add_executable(SPSCRingBufferTests test_spsc.cpp)
+add_executable(tests test_spsc.cpp test_lfs.cpp test_mpsc_queue.cpp)
 
 # Link with Google Test and your library
-target_link_libraries(SPSCRingBufferTests
+target_link_libraries(tests
         PRIVATE
         GTest::gtest_main
         SPSCRingBuffer
+        LockFreeStack
+        MPSCQueue
 )
 
 # Add test
-gtest_discover_tests(SPSCRingBufferTests)
+gtest_discover_tests(tests)

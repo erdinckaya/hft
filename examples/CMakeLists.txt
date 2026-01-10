@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.14)
-project(SPSCRingBufferProject VERSION 1.0.0)
+project(examples VERSION 1.0.0)
 
 # Set C++ standard
 set(CMAKE_CXX_STANDARD 20)
@@ -27,12 +27,29 @@ include(GoogleTest)
 # Enable testing
 enable_testing()
 
-# Add your library
+# Add SPSCRingBuffer library
 add_library(SPSCRingBuffer INTERFACE)
 target_include_directories(SPSCRingBuffer INTERFACE
         ${CMAKE_CURRENT_SOURCE_DIR}/include)
 target_sources(SPSCRingBuffer INTERFACE
         ${CMAKE_CURRENT_SOURCE_DIR}/include/SPSCRingBuffer.h)
+
+
+# Add LockFreeStack library
+add_library(LockFreeStack INTERFACE)
+target_include_directories(LockFreeStack INTERFACE
+        ${CMAKE_CURRENT_SOURCE_DIR}/include)
+target_sources(LockFreeStack INTERFACE
+        ${CMAKE_CURRENT_SOURCE_DIR}/include/LockFreeStack.h)
+
+
+
+# Add MPSCQueue library
+add_library(MPSCQueue INTERFACE)
+target_include_directories(MPSCQueue INTERFACE
+        ${CMAKE_CURRENT_SOURCE_DIR}/include)
+target_sources(MPSCQueue INTERFACE
+        ${CMAKE_CURRENT_SOURCE_DIR}/include/MPSCQueue.h)
 
 # Add tests subdirectory
 add_subdirectory(tests)
