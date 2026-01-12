@@ -237,7 +237,7 @@ struct alignas(16) Order {
 };
 
 // Requires 16-byte aligned memory
-alignas(16) std::atomic<Order> current_order;
+alignas(64) std::atomic<Order> current_order;
 ```
 
 ## Best Practices

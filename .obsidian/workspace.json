@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "e38290eee38f8d8e",
+        "id": "0229552a8e3e3166",
         "type": "tabs",
         "children": [
           {
-            "id": "e6bf24c1ca72803e",
+            "id": "41c14cc074754974",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "cpu-concurency/atomics.md",
+                "file": "cpu-concurency/mutex.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "atomics"
+              "title": "mutex"
             }
           }
         ]
@@ -183,30 +183,32 @@
       "bases:Create new base": false
     }
   },
-  "active": "e6bf24c1ca72803e",
+  "active": "41c14cc074754974",
   "lastOpenFiles": [
-    "examples/cmake-build-debug/tests/CMakeFiles/tests.dir/test_mpsc_queue.cpp-f5ffc957.o.tmp",
-    "examples/cmake-build-debug/tests/CMakeFiles/tests.dir/test_mpsc_queue.cpp-9ebe056a.o.tmp",
-    "examples/cmake-build-debug/tests/CMakeFiles/tests.dir/test_mpsc_queue.cpp.o",
-    "examples/cmake-build-debug/tests/CMakeFiles/tests.dir/test_mpsc_queue.cpp-ea785002.o.tmp",
-    "examples/cmake-build-debug/tests/CMakeFiles/tests.dir/test_mpsc_queue.cpp-ea57255b.o.tmp",
-    "examples/cmake-build-debug/tests/CMakeFiles/tests.dir/test_mpsc_queue.cpp-ac3647c9.o.tmp",
-    "examples/cmake-build-debug/tests/CMakeFiles/tests.dir/test_mpsc_queue.cpp-2a3483d4.o.tmp",
-    "examples/cmake-build-debug/tests/CMakeFiles/tests.dir/test_mpsc_queue.cpp-f8f14a60.o.tmp",
-    "examples/cmake-build-debug/tests/CMakeFiles/tests.dir/test_mpsc_queue.cpp-a6234c34.o.tmp",
-    "examples/cmake-build-debug/tests/CMakeFiles/tests.dir/test_mpsc_queue.cpp-e2e25b6c.o.tmp",
-    "examples/cmake-build-debug/tests/CMakeFiles/tests.dir/test_mpsc_queue.cpp-45ff7077.o.tmp",
-    "data oriented paradigm/data oriented programming.md",
-    "cpu-concurency/threads-vs-processes.md",
-    "cpu-concurency/mutex.md",
+    "examples/CMakeLists.txt~",
+    "examples/include/MPSCQueue.h~",
+    "examples/tests/CMakeLists.txt~",
+    "examples/include/SPSCRingBuffer.h~",
+    "examples/cmake-build-debug/Testing/Temporary/LastTest.log.tmp16a5e",
+    "examples/cmake-build-debug/Testing/Temporary/LastTest.log.tmpb5995",
+    "examples/cmake-build-debug/tests/tests[1]_tests.cmake",
+    "examples/cmake-build-debug/tests/CMakeFiles/tests.dir/link.d",
+    "examples/cmake-build-debug/tests/tests",
+    "examples/cmake-build-debug/Testing/Temporary/LastTest.log.tmp194b9",
+    "examples/cmake-build-debug/CMakeCache.txt.tmp0b130",
     "cpu-concurency/memory models for atomic.md",
     "cpu-concurency/cahces.md",
     "cpu-concurency/atomics.md",
+    "cpu-concurency/triviality.md",
+    "2026-01-12.md",
     "README.md",
     "linux-os/syscall.md",
     "linux-os/memory mapping.md",
     "linux-os/malloc new.md",
     "linux-os/isolated cores.md",
+    "data oriented paradigm/data oriented programming.md",
+    "cpu-concurency/threads-vs-processes.md",
+    "cpu-concurency/mutex.md",
     "data oriented paradigm/simd.md",
     "examples/cmake-build-debug/_deps/googletest-src/googletest/include/gtest/internal/custom/README.md",
     "examples/cmake-build-debug/_deps/googletest-src/googletest/docs/README.md",
@@ -218,8 +220,6 @@
     "examples/cmake-build-debug/_deps/googletest-src/docs/reference/mocking.md",
     "examples/cmake-build-debug/_deps/googletest-src/docs/reference/matchers.md",
     "examples/cmake-build-debug/_deps/googletest-src/docs/reference/assertions.md",
-    "examples/cmake-build-debug/_deps/googletest-src/docs/reference/actions.md",
-    "examples/cmake-build-debug/_deps/googletest-src/docs/samples.md",
-    "examples/cmake-build-debug/_deps/googletest-src/docs/quickstart-cmake.md"
+    "examples/cmake-build-debug/_deps/googletest-src/docs/reference/actions.md"
   ]
 }
