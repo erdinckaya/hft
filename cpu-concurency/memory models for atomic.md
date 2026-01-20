@@ -1,3 +1,5 @@
+The modern CPUs can reorder the instructions, also compilers can reorder the instructions. The reason behind that some of the instructions takes more time than the others and the CPU uses that wait time to do more job. The load operations takes the priority and takes more time since it has to fetch and get the value and needs to wait for it but store is different store instructions stores the value and pushes them to the store buffer than it will be written to the memory namely caches. To cope with those memory ordering we use atomic fences those fences can be used through atomic variables and their functions.
+
 # 1️⃣ `memory_order_relaxed`
 
 ```cpp
