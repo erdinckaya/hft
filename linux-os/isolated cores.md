@@ -403,3 +403,34 @@ Imagine:
 That’s an isolated core.
 
 ---
+
+
+
+## **10. Summary**
+
+**Isolation is a DOUBLE-EDGED SWORD:**
+
+### **Pros (Why HFTs do it):**
+
+1. ⚡ **Sub-microsecond deterministic latency**
+    
+2. 🔥 **100% cache hit rates**
+    
+3. 🚫 **Zero context switch/interrupt overhead**
+    
+4. 📊 **Predictable performance**
+    
+5. 🏆 **Competitive advantage worth billions**
+    
+
+### **Cons (Why others avoid it):**
+
+1. 💸 **Extreme cost inefficiency**
+    
+2. 🔧 **Operational complexity**
+    
+3. 🏗️ **Infrastructure rigidity**
+    
+4. 🧪 **Development/testing challenges**
+    
+5. 🔒 **Hardware/software lock-in**

@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "HFT Dictionary.md",
+                "file": "linux-os/memory mapping.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "HFT Dictionary"
+              "title": "memory mapping"
             }
           }
         ]
@@ -185,19 +185,20 @@
   },
   "active": "e6bf24c1ca72803e",
   "lastOpenFiles": [
+    "linux-os/virtual memory.md",
     "linux-os/syscall.md",
     "linux-os/memory mapping.md",
-    "linux-os/malloc new.md",
     "linux-os/isolated cores.md",
+    "linux-os/malloc new.md",
+    "cpu-concurency/triviality.md",
+    "cpu-concurency/threads-vs-processes.md",
+    "cpu-concurency/mutex.md",
+    "cpu-concurency/memory models for atomic.md",
+    "cpu-concurency/cahces.md",
+    "cpu-concurency/atomics.md",
     "HFT Dictionary.md",
     "data oriented paradigm/simd.md",
     "data oriented paradigm/data oriented programming.md",
-    "cpu-concurency/cahces.md",
-    "cpu-concurency/mutex.md",
-    "cpu-concurency/memory models for atomic.md",
-    "cpu-concurency/atomics.md",
-    "cpu-concurency/triviality.md",
-    "cpu-concurency/threads-vs-processes.md",
     "README.md",
     "examples/cmake-build-debug/Testing/Temporary/CTestCheckpoint.txt",
     "examples/cmake-build-debug/Testing/Temporary/LastTest.log.tmp738c3",
@@ -219,7 +220,6 @@
     "examples/cmake-build-debug/_deps/googletest-src/docs/reference/mocking.md",
     "examples/cmake-build-debug/_deps/googletest-src/docs/reference/matchers.md",
     "examples/cmake-build-debug/_deps/googletest-src/docs/reference/assertions.md",
-    "examples/cmake-build-debug/_deps/googletest-src/docs/reference/actions.md",
-    "examples/cmake-build-debug/_deps/googletest-src/docs/samples.md"
+    "examples/cmake-build-debug/_deps/googletest-src/docs/reference/actions.md"
   ]
 }
