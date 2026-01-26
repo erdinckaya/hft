@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "linux-os/memory mapping.md",
+                "file": "data oriented paradigm/simd.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "memory mapping"
+              "title": "simd"
             }
           }
         ]
@@ -185,20 +185,28 @@
   },
   "active": "e6bf24c1ca72803e",
   "lastOpenFiles": [
-    "linux-os/virtual memory.md",
-    "linux-os/syscall.md",
-    "linux-os/memory mapping.md",
+    "cpu-concurency/atomics.md",
+    "cpu-concurency/cahces.md",
+    "data oriented paradigm/data oriented programming.md",
+    "data oriented paradigm/simd.md",
+    "networking/UDP.md",
+    "networking/TCP.md",
+    "networking/Multicast.md",
+    "networking/http and websocket.md",
+    "networking/dpdk.md",
     "linux-os/isolated cores.md",
     "linux-os/malloc new.md",
+    "linux-os/memory mapping.md",
+    "linux-os/spaces.md",
+    "linux-os/syscall.md",
+    "linux-os/virtual memory.md",
+    "HFT Dictionary.md",
     "cpu-concurency/triviality.md",
     "cpu-concurency/threads-vs-processes.md",
     "cpu-concurency/mutex.md",
     "cpu-concurency/memory models for atomic.md",
-    "cpu-concurency/cahces.md",
-    "cpu-concurency/atomics.md",
-    "HFT Dictionary.md",
-    "data oriented paradigm/simd.md",
-    "data oriented paradigm/data oriented programming.md",
+    "atomic-op-table.png",
+    "atomic-order-ss.png",
     "README.md",
     "examples/cmake-build-debug/Testing/Temporary/CTestCheckpoint.txt",
     "examples/cmake-build-debug/Testing/Temporary/LastTest.log.tmp738c3",
@@ -214,12 +222,6 @@
     "examples/cmake-build-debug/_deps/googletest-src/googletest/docs/README.md",
     "examples/cmake-build-debug/_deps/googletest-src/googletest/README.md",
     "examples/cmake-build-debug/_deps/googletest-src/googlemock/include/gmock/internal/custom/README.md",
-    "examples/cmake-build-debug/_deps/googletest-src/googlemock/docs/README.md",
-    "examples/cmake-build-debug/_deps/googletest-src/googlemock/README.md",
-    "examples/cmake-build-debug/_deps/googletest-src/docs/reference/testing.md",
-    "examples/cmake-build-debug/_deps/googletest-src/docs/reference/mocking.md",
-    "examples/cmake-build-debug/_deps/googletest-src/docs/reference/matchers.md",
-    "examples/cmake-build-debug/_deps/googletest-src/docs/reference/assertions.md",
-    "examples/cmake-build-debug/_deps/googletest-src/docs/reference/actions.md"
+    "examples/cmake-build-debug/_deps/googletest-src/googlemock/docs/README.md"
   ]
 }

@@ -14,20 +14,14 @@ Virtual memory is needed for several fundamental reasons:
 
 1. **Limited Physical Memory**  
     Physical RAM is finite, but programs may require more memory than what is available at any given time.
-    
 2. **Elimination of External Fragmentation**  
     Without virtual memory, allocating large contiguous blocks of physical memory leads to fragmentation. Paging divides memory into fixed-size blocks (pages), allowing non-contiguous physical allocation.
-    
 3. **Process Isolation and Security**  
     Each process has its own virtual address space, preventing accidental or malicious access to another process’s memory.
-    
 4. **Efficient Multiprogramming**  
     Only actively used pages need to reside in RAM. Inactive pages can be stored on disk, allowing more processes to run concurrently.
-    
 5. **Simplified Programming Model**  
     Programs can assume a simple, contiguous address space without worrying about physical memory placement.
-    
-
 ---
 
 ## Virtual Address Structure
@@ -56,17 +50,11 @@ Each process has its own **page table**, which maps virtual page numbers to phys
 ### Address Translation Steps
 
 1. The CPU generates a virtual address.
-    
 2. The **TLB** is checked to see if the virtual-to-physical mapping is cached.
-    
 3. **TLB hit:** The physical address is obtained immediately.
-    
 4. **TLB miss:** A page table walk is performed in memory.
-    
 5. If the page table entry is valid, the TLB is updated and execution continues.
-    
 6. If the page is not present, a **page fault** occurs.
-    
 
 ---
 
@@ -75,17 +63,11 @@ Each process has its own **page table**, which maps virtual page numbers to phys
 When a page fault occurs:
 
 1. The operating system pauses the current process.
-    
 2. The required page is loaded from disk into a free physical frame.
-    
 3. If no free frame exists, a page replacement algorithm is used.
-    
 4. If the evicted page is **dirty** (modified), it is written back to disk.
-    
 5. Page table and TLB entries are updated.
-    
 6. The process resumes execution.
-    
 
 > Common page replacement algorithms include Clock, Second Chance, and approximations of LRU.
 
@@ -94,11 +76,8 @@ When a page fault occurs:
 ## Dirty Bit
 
 - The **dirty bit** indicates whether a page has been modified while in memory.
-    
 - It is **only checked during page eviction**, not during normal address translation.
-    
 - Dirty pages must be written back to disk before replacement.
-    
 
 ---
 
@@ -116,11 +95,8 @@ CPU
 ```
 
 - TLB lookup and L1 cache access often occur **in parallel**.
-    
 - If the TLB misses, a page table walk is required.
-    
 - If all cache levels miss, the data is fetched from main memory.
-    
 
 TLBs typically exist separately for **instructions** and **data**.
 
@@ -129,15 +105,10 @@ TLBs typically exist separately for **instructions** and **data**.
 ## Key Takeaways (Interview‑Focused)
 
 - Virtual memory provides isolation, protection, and efficient memory usage.
-    
 - Virtual addresses are translated using page tables and accelerated by TLBs.
-    
 - Dirty bits and permissions live in page table entries, not addresses.
-    
 - Page faults allow programs to use more memory than physically available.
-    
 - TLBs are critical for performance and are checked before accessing RAM.
-    
 
 This abstraction is essential for modern operating systems and performance‑critical systems such as those used in **high‑frequency trading (HFT)** environments.
 
@@ -153,20 +124,15 @@ When the CPU executes a load or store instruction, it begins with a **virtual ad
 - The CPU generates a **virtual address**:
     
     `[ Virtual Page Number | Page Offset ]`
-    
 
 ---
 
 ### 2. Parallel TLB and L1 Cache Access
 
 - The **TLB** translates the **virtual page number → physical frame number**
-    
 - **In parallel**, the **L1 cache**:
-    
     - Uses the **page offset bits** to index the cache
-        
     - Reads candidate cache lines
-        
 
 This is possible because the **page offset is identical in both virtual and physical addresses**.
 
@@ -175,11 +141,8 @@ This is possible because the **page offset is identical in both virtual and phys
 ### 3. L1 Cache Hit (Fast Path)
 
 - TLB hit → physical address is known
-    
 - Cache tag comparison succeeds
-    
 - Data is returned immediately
-    
 
 ➡️ Translation cost is hidden; access is as fast as a normal cache hit.
 
@@ -188,47 +151,31 @@ This is possible because the **page offset is identical in both virtual and phys
 ### 4. L1 Cache Miss
 
 - The physical address (from the TLB) is used to access:
-    
     - L2 cache
-        
     - Then L3 cache
-        
     - Then main memory (RAM)
-        
 - All deeper cache levels require **fully translated physical addresses**
-    
 
 ---
 
 ### 5. TLB Miss
 
 - A **page table walk** is performed
-    
 - If the page is present:
-    
     - TLB is updated
-        
     - Cache access resumes
-        
 - If the page is not present:
-    
     - A **page fault** occurs
-        
     - The OS loads the page from disk
-        
 
 ---
 
 ### Key Properties
 
 - L1 cache is **virtually indexed, physically tagged (VIPT)**
-    
 - L2 and L3 caches are **physically indexed and tagged**
-    
 - TLB misses are extremely expensive
-    
 - Page faults are catastrophic for latency-critical systems
-    
 
 ---
 

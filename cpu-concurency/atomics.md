@@ -262,3 +262,6 @@ alignas(64) std::atomic<Order> current_order;
 5. Atomics are generally faster than mutexes but require deeper understanding
 6. Watch for false sharing - use `alignas(64)` for frequently accessed atomics
 7. In HFT, every nanosecond counts - choose atomics carefully
+
+
+![[atomic-order-ss.png]]![[atomic-op-table.png]]

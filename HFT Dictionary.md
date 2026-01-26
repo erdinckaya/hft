@@ -358,15 +358,6 @@ How much work is done per unit time.
 
 ---
 
-### **Tail Latency**
-
-Worst-case latency (e.g., 99.9th percentile).
-
-**Why it matters:**  
-HFT cares more about tail latency than averages.
-
----
-
 ### **Jitter**
 
 Variation in latency.
@@ -406,21 +397,62 @@ Any unexpected work that delays your thread.
 Examples:
 
 - OS tasks
-    
 - Interrupts
-    
 - Other programs
-    
 
 ---
 
 ## GOLDEN INTERVIEW PHRASES (MEMORIZE)
 
 - “We optimize for **tail latency**, not average.”
-    
 - “Isolation is about **predictability**.”
-    
 - “Interrupts and OS noise are the biggest sources of jitter.”
-    
 - “We pin threads and memory to reduce movement.”
-    
+
+---
+
+**Tail latency** is about the _slowest_ requests in a system — the ones at the “tail” of the response-time distribution.
+
+Instead of asking “What’s the average response time?”, tail latency asks:
+
+> “How bad is it for the slowest users?”
+
+### The idea
+
+When you measure latency, you usually look at **percentiles**:
+
+- **p50 (median):** half of requests are faster than this
+- **p90:** 90% are faster, 10% are slower
+- **p95 / p99 / p99.9:** this is the **tail**
+
+👉 **Tail latency = high-percentile latency (usually p95, p99, or higher).**
+
+### Why averages lie
+
+Example:
+
+- 99 requests take **10 ms**
+- 1 request takes **1,000 ms**
+
+Average ≈ **20 ms** → sounds great  
+But that one user waiting a full second? That’s the **tail**, and it _really_ matters.
+
+### Why tail latency matters
+
+- **User experience:** users remember slow moments, not averages
+- **Distributed systems:** one slow service can delay the whole request
+- **SLAs/SLOs:** often defined in terms of p95 or p99, not mean
+- **Cascading failures:** slow requests pile up and make everything worse
+
+### Common causes of bad tail latency
+
+- Garbage collection pauses
+- Cache misses
+- Lock contention
+- Cold starts
+- Network hiccups
+- Load spikes / queueing delays
+### Simple mental model
+
+- **Average latency:** “How fast is the system _usually_?”
+- **Tail latency:** “How painful is the system _at its worst_?”

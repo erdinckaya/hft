@@ -9,24 +9,16 @@ These notes present a **correct, precise, and interview-grade** understanding of
 `mmap()` maps a file or anonymous memory into a process’s **virtual address space**.
 
 - The process accesses the memory using **normal loads/stores**
-    
 - No explicit `read()` / `write()` syscalls on the hot path
-    
 - Backed by **physical pages managed by the kernel**
-    
 
 Important clarification:
 
 - `mmap` does **not eliminate copying entirely**
-    
 - It avoids _explicit user-space buffer copies_
-    
 - Data still moves:
-    
     - Disk → page cache
-        
     - NIC → memory (unless kernel-bypass is used)
-        
 
 ### Key Property
 
@@ -39,18 +31,13 @@ Important clarification:
 `munmap()`:
 
 - Immediately removes the virtual memory mapping
-    
 - Does **not guarantee immediate physical memory release**
-    
 - Dirty pages may be written back later (kernel-managed)
-    
 
 Notes:
 
 - Write-back is **not automatic**
-    
 - `msync()` can request flushing, but persistence is usually irrelevant in HFT
-    
 
 ---
 
@@ -59,38 +46,26 @@ Notes:
 ### `read()` Path
 
 - Syscall per read
-    
 - Kernel → user copy
-    
 - User-managed buffers
-    
 
 ### `mmap()` Path
 
 - One-time syscall to map
-    
 - Page faults on first access
-    
 - No per-access syscall
-    
 - No extra user-space buffer
-    
 
 ### Sharing Advantage
 
 - Multiple processes can map the **same file** with `MAP_SHARED`
-    
 - Different virtual addresses, **same physical pages**
-    
 - Zero-copy _inter-process sharing_
-    
 
 Important:
 
 - You cannot "share an address" across processes
-    
 - You share **physical memory**, not virtual addresses
-    
 
 ---
 
@@ -99,20 +74,14 @@ Important:
 Common misconceptions (often tested in interviews):
 
 - ❌ Does NOT eliminate kernel involvement
-    
 - ❌ Does NOT avoid page faults
-    
 - ❌ Does NOT make memory deterministic by itself
-    
 
 Reality:
 
 - Page faults are kernel events
-    
 - TLB misses still occur
-    
 - Kernel scheduling still matters
-    
 
 ---
 
@@ -121,40 +90,27 @@ Reality:
 ### 1. Deterministic Memory Layout
 
 - Fixed addresses after initialization
-    
 - No allocator jitter
-    
 - Predictable memory access patterns
-    
 
 ### 2. Reduced Syscall Frequency
 
 - No `read()` / `write()` in the hot path
-    
 - Kernel only involved on faults or teardown
-    
 
 ### 3. Cache & TLB Warming
 
 - Pre-touch pages during startup
-    
 - Populate:
-    
     - Page tables
-        
     - TLB entries
-        
     - Cache lines
-        
 
 ### 4. Fast IPC
 
 - Shared memory ring buffers
-    
 - Lock-free structures
-    
 - No kernel mediation during steady state
-    
 
 ---
 
@@ -163,11 +119,8 @@ Reality:
 `mmap` is **not** used for:
 
 - Direct NIC RX/TX buffers
-    
 - Market data socket I/O
-    
 - Kernel networking fast paths
-    
 
 These are handled by **kernel-bypass frameworks**.
 
@@ -178,22 +131,15 @@ These are handled by **kernel-bypass frameworks**.
 ### Kernel Networking (Avoided)
 
 - Sockets
-    
 - Interrupts
-    
 - Context switches
-    
 - Scheduler noise
-    
 
 ### Kernel Bypass (Preferred)
 
 - DPDK / Solarflare Onload / RDMA
-    
 - User-space polling
-    
 - DMA directly into user-space memory
-    
 
 No sockets. No UDP stack. No page cache.
 
@@ -204,36 +150,22 @@ No sockets. No UDP stack. No page cache.
 ### Startup (Cold Path)
 
 1. Reserve hugepages
-    
 2. Initialize DPDK
-    
 3. Allocate DMA-capable memory
-    
 4. Set up RX/TX rings
-    
 5. Pin threads to isolated CPU cores
-    
 6. Disable interrupts
-    
 7. Pre-fault and warm memory
-    
 
 ### Runtime (Hot Path)
 
 1. NIC receives packet
-    
 2. NIC DMA writes packet into user-space RX ring
-    
 3. Polling loop detects packet
-    
 4. Decode market data
-    
 5. (Optional) Write normalized data to shared memory ring (`mmap`)
-    
 6. Strategy reads shared memory
-    
-7. Decision → order → TX ring → NIC DMA
-    
+7. Decision → order → TX ring → NIC DMA    
 
 Kernel involvement on the hot path: **none**
 
@@ -244,24 +176,16 @@ Kernel involvement on the hot path: **none**
 Typical uses:
 
 - Shared memory between:
-    
     - Market data handler
-        
     - Strategy engine
-        
     - Risk engine
-        
 - Pre-allocated control structures
-    
 - Occasionally logging or replay buffers
-    
 
 Not used for:
 
 - NIC DMA regions
-    
-- Packet RX/TX
-    
+- Packet RX/TX    
 
 ---
 
@@ -274,20 +198,9 @@ Not used for:
 ## 11. Common Follow-Up Topics to Expect
 
 - Major vs minor page faults
-    
 - TLB shootdowns
-    
 - Hugepages tradeoffs
-    
 - `MAP_SHARED` vs `MAP_PRIVATE`
-    
 - False sharing in shared memory rings
-    
 - Polling vs interrupts
-    
 - NUMA locality
-    
-
----
-
-**End of notes**

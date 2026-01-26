@@ -111,11 +111,8 @@ Core isolation remains a fundamental technique in the HFT arms race, providing p
 A **CPU (processor)** has multiple **cores**.
 
 - A **core** is a physical unit that can execute instructions
-    
 - The operating system (Linux) schedules programs (“threads”) onto cores
-    
 - By default, **all programs share all cores**
-    
 
 This sharing causes problems for **low-latency programs**.
 
@@ -128,11 +125,8 @@ In HFT, programs must respond in **microseconds**.
 Problems with shared cores:
 
 - The OS may pause your program to run another task
-    
 - Hardware interrupts can interrupt your program
-    
 - Other programs can evict data from the CPU’s cache
-    
 
 These cause **unpredictable delays**, even if they’re short.
 
@@ -147,11 +141,8 @@ These cause **unpredictable delays**, even if they’re short.
 An **isolated core** is:
 
 - A CPU core
-    
 - Reserved only for one important program
-    
 - The operating system avoids using it for other work
-    
 
 The goal is **predictability**, not speed.
 
@@ -162,9 +153,7 @@ The goal is **predictability**, not speed.
 HFT firms care about:
 
 - **Worst-case delay**, not average speed
-    
 - Missing one market event can cost money
-    
 
 So they ask:
 
@@ -183,22 +172,15 @@ Let’s name the sources of interference clearly.
 The **scheduler** decides:
 
 - Which program runs
-    
 - On which core
-    
 - For how long
-    
 
 Normally:
 
 - Your program runs
-    
 - Then gets paused
-    
 - Another program runs
-    
 - Then your program resumes
-    
 
 This pause is called a **context switch**.
 
@@ -215,20 +197,14 @@ An **interrupt** is when hardware says:
 Examples:
 
 - Network packet arrives
-    
 - Timer fires
-    
 - Disk operation finishes
-    
 
 Interrupts can:
 
 - Stop your program
-    
 - Run kernel code
-    
 - Resume your program later
-    
 
 This adds **latency spikes**.
 
@@ -241,11 +217,8 @@ Each core has **small, very fast memory** called cache.
 If another program runs:
 
 - It may overwrite cache data
-    
 - Your program must reload data
-    
 - This costs time
-    
 
 ---
 
@@ -266,9 +239,7 @@ This is called **CPU isolation**.
 Effect:
 
 - Normal OS work goes to other cores
-    
 - Your critical program gets exclusive use
-    
 
 ---
 
@@ -283,11 +254,8 @@ This is called **CPU pinning**.
 Result:
 
 - Your program never moves between cores
-    
 - Cache stays warm
-    
 - Behavior is predictable
-    
 
 ---
 
@@ -296,18 +264,13 @@ Result:
 **NIC = Network Interface Card**
 
 - The hardware that sends and receives network packets
-    
 - Market data arrives through the NIC
-    
 - The NIC generates interrupts when packets arrive
-    
 
 Important:
 
 - NIC interrupts can run on any core unless controlled
-    
 - You must keep them **away from isolated cores**
-    
 
 ---
 
@@ -318,13 +281,9 @@ Important:
 On large servers:
 
 - The CPU is split into **sockets**
-    
 - Each socket has its **own memory**
-    
 - Accessing local memory is fast
-    
 - Accessing memory from another socket is slower
-    
 
 Think of it as:
 
@@ -333,15 +292,12 @@ Think of it as:
 Bad setup:
 
 - Program runs on one socket
-    
 - Memory is on another socket  
     → extra delay
-    
 
 Good setup:
 
 - Program, memory, and NIC all on the same socket
-    
 
 ---
 
@@ -355,23 +311,17 @@ One physical core pretends to be **two logical cores**.
 They share:
 
 - Execution units
-    
 - Caches
-    
 
 Problem:
 
 - Another thread can steal resources
-    
 - Causes unpredictable timing
-    
 
 HFT practice:
 
 - Disable SMT
-    
 - Or never use the sibling thread
-    
 
 ---
 
@@ -392,13 +342,9 @@ That alone is a **good answer**.
 Imagine:
 
 - One core = one race car track
-    
 - No pedestrians
-    
 - No traffic lights
-    
 - No other cars
-    
 
 That’s an isolated core.
 
@@ -413,24 +359,15 @@ That’s an isolated core.
 ### **Pros (Why HFTs do it):**
 
 1. ⚡ **Sub-microsecond deterministic latency**
-    
 2. 🔥 **100% cache hit rates**
-    
 3. 🚫 **Zero context switch/interrupt overhead**
-    
 4. 📊 **Predictable performance**
-    
 5. 🏆 **Competitive advantage worth billions**
-    
 
 ### **Cons (Why others avoid it):**
 
 1. 💸 **Extreme cost inefficiency**
-    
 2. 🔧 **Operational complexity**
-    
 3. 🏗️ **Infrastructure rigidity**
-    
 4. 🧪 **Development/testing challenges**
-    
 5. 🔒 **Hardware/software lock-in**
