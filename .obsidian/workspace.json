@@ -11,14 +11,14 @@
             "id": "e6bf24c1ca72803e",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "split-diff-view",
               "state": {
-                "file": "data oriented paradigm/simd.md",
-                "mode": "source",
-                "source": false
+                "aFile": ".obsidian/community-plugins.json",
+                "bFile": ".obsidian/community-plugins.json",
+                "aRef": ""
               },
-              "icon": "lucide-file",
-              "title": "simd"
+              "icon": "diff",
+              "title": "Diff: community-plugins.json  (Working Tree)"
             }
           }
         ]
@@ -74,7 +74,8 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -164,13 +165,23 @@
               "icon": "lucide-list",
               "title": "Outline of cahces"
             }
+          },
+          {
+            "id": "54ae2fee3bca0ade",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
           }
-        ]
+        ],
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -180,20 +191,25 @@
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "bases:Create new base": false
+      "bases:Create new base": false,
+      "obsidian-git:Open Git source control": false
     }
   },
   "active": "e6bf24c1ca72803e",
   "lastOpenFiles": [
     "cpu-concurency/atomics.md",
     "cpu-concurency/cahces.md",
+    "cpu-concurency/memory models for atomic.md",
+    "cpu-concurency/mutex.md",
+    "cpu-concurency/threads-vs-processes.md",
+    "cpu-concurency/triviality.md",
     "data oriented paradigm/data oriented programming.md",
     "data oriented paradigm/simd.md",
+    "networking/dpdk.md",
     "networking/UDP.md",
     "networking/TCP.md",
     "networking/Multicast.md",
     "networking/http and websocket.md",
-    "networking/dpdk.md",
     "linux-os/isolated cores.md",
     "linux-os/malloc new.md",
     "linux-os/memory mapping.md",
@@ -201,10 +217,6 @@
     "linux-os/syscall.md",
     "linux-os/virtual memory.md",
     "HFT Dictionary.md",
-    "cpu-concurency/triviality.md",
-    "cpu-concurency/threads-vs-processes.md",
-    "cpu-concurency/mutex.md",
-    "cpu-concurency/memory models for atomic.md",
     "atomic-op-table.png",
     "atomic-order-ss.png",
     "README.md",
