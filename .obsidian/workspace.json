@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "e38290eee38f8d8e",
+        "id": "373a072691d9d30c",
         "type": "tabs",
         "children": [
           {
-            "id": "e6bf24c1ca72803e",
+            "id": "2938c0581be4ecc8",
             "type": "leaf",
             "state": {
-              "type": "split-diff-view",
+              "type": "markdown",
               "state": {
-                "aFile": ".obsidian/community-plugins.json",
-                "bFile": ".obsidian/community-plugins.json",
-                "aRef": ""
+                "file": "data oriented paradigm/simd.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "diff",
-              "title": "Diff: community-plugins.json  (Working Tree)"
+              "icon": "lucide-file",
+              "title": "simd"
             }
           }
         ]
@@ -74,8 +74,7 @@
               "title": "Bookmarks"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -195,27 +194,29 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "e6bf24c1ca72803e",
+  "active": "2938c0581be4ecc8",
   "lastOpenFiles": [
-    "cpu-concurency/atomics.md",
-    "cpu-concurency/cahces.md",
-    "cpu-concurency/memory models for atomic.md",
-    "cpu-concurency/mutex.md",
-    "cpu-concurency/threads-vs-processes.md",
-    "cpu-concurency/triviality.md",
     "data oriented paradigm/data oriented programming.md",
-    "data oriented paradigm/simd.md",
+    "cpu-concurency/triviality.md",
+    "cpu-concurency/threads-vs-processes.md",
+    "cpu-concurency/mutex.md",
+    "cpu-concurency/memory models for atomic.md",
+    "cpu-concurency/cahces.md",
+    "cpu-concurency/atomics.md",
+    "networking/TCP, UDP, Multicast.md",
+    "networking/http and websocket.md",
     "networking/dpdk.md",
+    "linux-os/virtual memory.md",
+    "linux-os/syscall.md",
+    "linux-os/spaces.md",
+    "linux-os/numa.md",
+    "linux-os/memory mapping.md",
+    "linux-os/malloc new.md",
+    "linux-os/isolated cores.md",
+    "data oriented paradigm/simd.md",
     "networking/UDP.md",
     "networking/TCP.md",
-    "networking/Multicast.md",
-    "networking/http and websocket.md",
-    "linux-os/isolated cores.md",
-    "linux-os/malloc new.md",
-    "linux-os/memory mapping.md",
-    "linux-os/spaces.md",
-    "linux-os/syscall.md",
-    "linux-os/virtual memory.md",
+    "interview-links.md",
     "HFT Dictionary.md",
     "atomic-op-table.png",
     "atomic-order-ss.png",
@@ -232,8 +233,6 @@
     "examples/cmake-build-debug/tests/CMakeFiles/tests.dir/test_mpsc_queue.cpp-ea57255b.o.tmp",
     "examples/cmake-build-debug/_deps/googletest-src/googletest/include/gtest/internal/custom/README.md",
     "examples/cmake-build-debug/_deps/googletest-src/googletest/docs/README.md",
-    "examples/cmake-build-debug/_deps/googletest-src/googletest/README.md",
-    "examples/cmake-build-debug/_deps/googletest-src/googlemock/include/gmock/internal/custom/README.md",
-    "examples/cmake-build-debug/_deps/googletest-src/googlemock/docs/README.md"
+    "examples/cmake-build-debug/_deps/googletest-src/googletest/README.md"
   ]
 }
